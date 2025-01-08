@@ -1,0 +1,14 @@
+[
+    {
+        "regEmail": "tên_đăng_nhập",
+      "regFullname": "Họ_và_tên",
+     "regUsername": " Tên",
+      "regPassword":"Mật_khẩu"
+    },
+    {
+         "username":"Tên_khách_hàng",
+         "password":"Mật_Khẩu"  
+    }
+]
+    
+    

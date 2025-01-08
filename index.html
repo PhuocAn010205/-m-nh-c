@@ -6,6 +6,7 @@
     <title>Band</title>
     <link rel="stylesheet" href="style.css">
     <link rel="stylesheet" href="responsive.css">
+    <script href="login.js"></script>
 
 </head>
 <body>
@@ -29,6 +30,10 @@
                     <li><a href="#">Media</a></li>
                    </ul>
                 </li>
+                   <li class="user-name"><a href="page/LoginSignup/login_signup.html">
+                     <span id="accountname"> Đăng nhập</span> 
+                     <i class='bx bxs-user'></i>    
+                </a></li>
             </ul>
             <div id= "mobile-menu" class="mobile-menu-btn">
                 <i class="mobile-search-icon bx bx-menu"></i>
@@ -56,15 +61,15 @@
            <div class=" row member-list">
            <div class=" member-item col col-third text-center">
             <p class="member-name"> Name</p>
-              <img src="bandmember.jpg" alt="" class="member-img">
+              <img src="page/img/bandmember.jpg" alt="" class="member-img">
            </div>
            <div class=" member-item col col-third text-center">
             <p class="member-name"> Name</p>
-              <img src="bandmember.jpg" alt="" class="member-img">
+              <img src="page/img/bandmember.jpg" alt="" class="member-img">
            </div>
            <div class=" member-item col col-third text-center">
             <p class="member-name"> Name</p>
-              <img src="bandmember.jpg" alt="" class="member-img">
+              <img src="page/img/bandmember.jpg" alt="" class="member-img">
            </div>
            <div class="clear"></div>
             </div>
@@ -80,7 +85,7 @@
                         </ul>
                         <div class="row place-list">
                             <div class="col col-third s-colo-full mt-16">
-                                <img src="ntt.jpg" alt="Nguyễn Tất Thành university" class="place-img">
+                                <img src="page/img/ntt.jpg" alt="Nguyễn Tất Thành university" class="place-img">
                                 <div class="place-content">
                                     <h3 class="place-heading">NTT</h3>
                                     <p class="place-time">9/3/2024</p>
@@ -89,7 +94,7 @@
                                 </div>
                             </div>
                             <div class="col col-third s-colo-full mt-16">
-                                <img src="uth1.jpg" alt="Nguyễn Tất Thành university" class="place-img">
+                                <img src="page/img/uth1.jpg" alt="Nguyễn Tất Thành university" class="place-img">
                                 <div class="place-content">
                                     <h3 class="place-heading">UTH</h3>
                                     <p class="place-time">9/3/2024</p>
@@ -98,7 +103,7 @@
                                 </div>
                             </div>
                             <div class="col col-third s-colo-full mt-16">
-                                <img src="van lang.jpg" alt="Nguyễn Tất Thành university" class="place-img">
+                                <img src="page/img/van lang.jpg" alt="Nguyễn Tất Thành university" class="place-img">
                                 <div class="place-content">
                                     <h3 class="place-heading">VLU</h3>
                                     <p class="place-time">9/3/2024</p>
@@ -144,7 +149,7 @@
             </div>
             <!-- End:content-section-->
             <div class="map-section">
-                <img src="anh thanh pho.jpg" alt="">
+                <img src="page/img/anh thanh pho.jpg" alt="">
             </div>
         </div>
         <div id="footer">
@@ -242,6 +247,52 @@
 
        }
     </script>
+    <script>
+        window.addEventListener('DOMContentLoaded', ()=>{
+    const loggedInUser = JSON.parse(localStorage.getItem('loggedInUser'));
+    if (loggedInUser){
+        document.getElementById('accountname').innerText =loggedInUser.username;
+        document.querySelector(".user-name i") .className ="bx bxs-exit"
 
+    }
+    else{
+        Document.querySelector('.user-name').innerHTML =
+       `
+              <i class='bx bxs-user'></i>
+              <span id="accountname"> Đăng nhập</span>         
+
+       `
+
+    }
+})
+    </script>
+
+    <script>
+        const headerAccount = document.querySelector('.user-name')
+        function logout () {
+       localStorage.removeItem('loggedInUser')
+       Document.querySelector('.user-name').innerHTML =
+       `
+              <i class='bx bxs-user'></i>
+              <span id="accountname"> Đăng nhập</span>         
+
+       `
+       Window.location.href="page/LoginSignup/login_signup.html"
+        }
+        headerAccount.addEventListener("click",logout);
+        let json = [
+    {
+        "regEmail": "tên_đăng_nhập",
+      "regFullname": "Họ_và_tên",
+     "regUsername": " Tên",
+      "regPassword":"Mật_khẩu"
+    },
+    {
+         "username":"Tên_khách_hàng",
+         "password":"Mật_Khẩu"  
+    }
+]
+  console.log(json);
+    </script>
 </body>
 </html>
