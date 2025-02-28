@@ -141,15 +141,12 @@ html{
 
 #nav li:hover .subnav{
   display: block;
-  text-align: center;
 }
 
 #nav .subnav li:hover a,
 #nav > li:hover > a {
   color: #000;
   background-color: #ccc;
-  display: block;
-
 }
 .user-name{
   flex-direction: column;
