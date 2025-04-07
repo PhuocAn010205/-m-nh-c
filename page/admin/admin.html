@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="admin.css">
+    <title>Admin Page</title>
+</head>
+<body>
+    <div class="admin-container">
+        <h1>Admin Dashboard</h1>
+        <div class="tabs">
+            <button class="tab-button" onclick="showTab('userManagement')">User Management</button>
+            <button class="tab-button" onclick="showTab('contentManagement')">Content Management</button>
+            <button class="tab-button" onclick="showTab('productManagement')">Product Management</button>
+            <button class="tab-button" onclick="showTab('commentManagement')">Comment Management</button>
+            <button class="tab-button" onclick="showTab('systemManagement')">System Management</button>
+            <button class="tab-button" onclick="showTab('statistics')">Statistics</button>
+            <button class="tab-button" onclick="showTab('marketing')">Marketing</button>
+            <button class="tab-button" onclick="showTab('seo')">SEO</button>
+            <button class="tab-button" onclick="showTab('plugins')">Plugins</button>
+        </div>
+        <div id="userManagement" class="tab-content">
+            <h2>User Management</h2>
+            <table id="userTable">
+                <thead>
+                    <tr>
+                        <th>Username</th>
+                        <th>Password</th>
+                        <th>Full Name</th>
+                        <th>Email</th>
+                        <th>Actions</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <!-- User data will be populated here -->
+                </tbody>
+            </table>
+            <button id="refreshButton">Refresh Data</button>
+        </div>
+        <!-- Add more tab contents for other functionalities here -->
+    </div>
+    <script src="admin.js"></script>
+</body>
+</html>

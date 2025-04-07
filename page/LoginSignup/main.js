@@ -1,3 +1,4 @@
+let apiUser ='http://localhost:3000/users';
 document.querySelectorAll('.info-item .btn').forEach(function (button){
     button.addEventListener('click', function(){
       document.querySelector('.container').classList.toggle
@@ -56,7 +57,7 @@ function register(event){
     let user ={
         username : username,
         password : password,
-        fullnamne: fullName,
+        fullname: fullName, // Fixed typo here
         email : email,
     };
     let users= localStorage.getItem('users') ?JSON.parse(localStorage.getItem('users')) :{};
@@ -94,4 +95,19 @@ function login(event){
         loginMessage.style.color='red';
     }
 }
-  
+function getUsers(){
+    let users = localStorage.getItem('users')?JSON.parse(localStorage.getItem('users')) :{};
+    console.log(users);
+}
+function createUser (event){
+    fetch(apiUser, {
+        method: 'POST',
+        headers: {
+            'Content-Type': 'application/json',
+        },
+        body: JSON.stringify(event)
+    })
+    .then(response => response.json())
+}
+getUsers();
+
